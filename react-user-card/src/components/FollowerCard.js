@@ -2,15 +2,30 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const FollowersContainer = styled.div`
-    border: 3px solid green;
-    display: flex;
-    flex-direction: column;
-    justify-content:space-evenly;
-    align-items:center;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    display:flex;
+    flex-wrap:wrap;
     padding: 3%;
-    width: 50vw;
+    width: 40vw;
     margin: 2%;
 
+    h1 {
+        width: 100%;
+    }
+`
+const ImgContainer = styled.div `
+    width: 30%;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    padding: 1%;
+    height: 30%;
+
+    img{
+        width:70%;
+        border-radius: 15px;
+    }
 `
 class FollowerCard extends Component {
     state = {
@@ -26,15 +41,15 @@ class FollowerCard extends Component {
     render() {
         return(
             <FollowersContainer>
-                <h1>{this.props.user.name}'s Followers</h1>
+                 <h1>Check out my followers...</h1>
                 {this.props.followers.map(follower => (
-                    <div>
+                    <ImgContainer>
                         <img src={follower.avatar_url} />
-                        <h1>{follower.login}</h1>
-                        <h2>{follower.name}</h2>
-                    </div>
+                        <h3>{follower.login}</h3>
+                    </ImgContainer>
                 ))}
             </FollowersContainer>
+         
         )
     }
 }

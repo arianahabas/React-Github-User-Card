@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import UserCard from './components/Usercard'
+import UserCard from './components/UserCard'
 import FollowerCard from './components/FollowerCard';
+import styled from 'styled-components'
+import img from '../src/background.jpg'
 
+
+const Container = styled.div`
+  background-image: url(${img});
+  display: flex;
+`
 
 class App extends Component {
   constructor() {
@@ -36,10 +43,10 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
+      <Container>
         <UserCard user={this.state.user}  />
         <FollowerCard followers={this.state.followers} user={this.state.user} />
-      </div>
+      </Container>
     );
   }
 
