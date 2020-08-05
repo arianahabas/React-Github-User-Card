@@ -19,7 +19,7 @@ class App extends Component {
       followers: [],
     }
   }
-
+ 
 
   componentDidMount(){
     // fetch intial data
@@ -41,11 +41,12 @@ class App extends Component {
     })
 
   }
+      
   render() {
     return (
       <Container>
         <UserCard user={this.state.user}  />
-        <FollowerCard followers={this.state.followers} user={this.state.user} />
+        <FollowerCard followers={this.state.followers}/>
       </Container>
     );
   }
